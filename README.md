@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Flashcard Frenzy
+
+A real-time competitive quiz game where speed and accuracy matter. Built with Next.js, Supabase, and MongoDB.
+
+## Features
+
+### Phase 1 (Current)
+- User authentication (signup, signin, signout)
+- Protected routes for authenticated users
+- User profile management
+- Dashboard with game statistics
+
+### Phase 2 (Upcoming)
+- Game creation and room management
+- Game joining via room codes
+- Real-time multiplayer quiz gameplay
+- Live scoreboard
+- Match history tracking
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Authentication**: Supabase Auth
+- **Database**: MongoDB (game data, user stats, match history)
+- **Real-time**: Supabase Realtime (planned for Phase 2)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- Supabase account
+- MongoDB database
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd signsetu
+```
+
+2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables
+
+Copy the `.env.local.example` file to `.env.local` and fill in your Supabase and MongoDB credentials:
+
+```bash
+cp .env.local.example .env.local
+```
+
+4. Run the development server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/                  # Next.js app directory
+│   ├── auth/             # Authentication pages
+│   ├── components/       # Reusable components
+│   ├── dashboard/        # Dashboard page
+│   ├── profile/          # User profile page
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Home page
+├── lib/                  # Library code
+│   ├── context/          # React context providers
+│   ├── mongodb/          # MongoDB connection and models
+│   └── supabase/         # Supabase client
+├── public/               # Static assets
+└── docs/                 # Documentation
+```
 
-## Learn More
+## Authentication Flow
 
-To learn more about Next.js, take a look at the following resources:
+1. Users sign up with email and password
+2. Email verification is required
+3. After verification, users can sign in
+4. Protected routes ensure only authenticated users can access certain pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Development Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 1 (Current)
+- [x] User authentication
+- [x] Protected routes
+- [x] Basic UI components
+- [x] User profile page
+- [x] Dashboard layout
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Phase 2 (Upcoming)
+- [ ] Game creation functionality
+- [ ] Game joining functionality
+- [ ] Real-time game interface
+- [ ] Match history tracking
+- [ ] User statistics and leaderboards
